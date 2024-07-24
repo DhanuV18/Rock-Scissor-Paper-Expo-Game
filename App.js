@@ -150,9 +150,9 @@ const styles = StyleSheet.create({
         alignItems: "center",
     },
     scoreText: {
-        color: "#fff",
-        fontSize: 30,
-        marginBottom: 10,
+        color: "black",
+        fontSize: 25,
+        marginBottom: 15,
         textAlign: "center",
     },
     image: {
