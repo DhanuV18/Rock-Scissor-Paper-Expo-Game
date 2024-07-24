@@ -3,7 +3,10 @@
 import React, { useState } from "react";
 import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
 import { LinearGradient } from 'expo-linear-gradient';
+import { Image } from 'expo-image';
 
+const blurhash =
+  '|rF?hV%2WCj[ayj[a|j[az_NaeWBj@ayfRayfQfQM{M|azj[azf6fQfQfQIpWXofj[ayj[j[fQayWCoeoeaya}j[ayfQa{oLj?j[WVj[ayayj[fQoff7azayj[ayj[j[ayofayayayj[fQj[ayayj[ayfjj[j[ayjuayj[';
 
 const App = () => {
     const [playerVal, setPlayerVal] = useState(null);
@@ -46,41 +49,56 @@ const App = () => {
 
     return (
       <View style={styles.container}>
-          <LinearGradient 
-              colors={['rgba(0,0,0,0.8)', 'transparent']}
-              style={styles.background}
-              />
+        <LinearGradient 
+            colors={['rgba(235, 123, 19, 0.9)', 'transparent']}
+            style={styles.background}
+            />
 
             <Text style={styles.title}>
                 Rock Scissor Paper
             </Text>
-            
+
             <View style={styles.buttonContainer}>
                 <TouchableOpacity
                     style={styles.button}
                     onPress={() => decision("ROCK")}
                 >
-                    <Text style={styles.buttonText}>
-                        Rock
-                    </Text>
+                  <Image
+                      style={styles.image}
+                      source={
+                        require('./assets/rock.png')
+                      }
+                      
+                  />
+
                 </TouchableOpacity>
-                <TouchableOpacity
-                    style={styles.button}
-                    onPress={() => decision("PAPER")}
-                >
-                    <Text style={styles.buttonText}>
-                        Paper
-                    </Text>
-                </TouchableOpacity>
+            
                 <TouchableOpacity
                     style={styles.button}
                     onPress={() => decision("SCISSORS")}
                 >
-                    <Text style={styles.buttonText}>
-                        Scissors
-                    </Text>
+                 <Image
+                      style={styles.image}
+                      source={
+                        require('./assets/scissors.png')
+                      }                      
+                />   
+                </TouchableOpacity>
+
+                <TouchableOpacity
+                    style={styles.button}
+                    onPress={() => decision("PAPER")}
+                >
+                <Image
+                      style={styles.image}
+                      source={
+                        require('./assets/paper.png')
+                      }                      
+                />             
+
                 </TouchableOpacity>
             </View>
+
             <View style={styles.scoreContainer}>
                 <Text style={styles.scoreText}>
                     Your Choice : {playerVal}
@@ -112,7 +130,7 @@ const styles = StyleSheet.create({
           left: 0,
           right: 0,
           top: 0,
-          height: 100,
+          height: 1000,
     }, 
     title: {
         fontSize: 28,
@@ -124,30 +142,26 @@ const styles = StyleSheet.create({
     buttonContainer: {
         flexDirection: "row",
         justifyContent: "space-between",
-        marginVertical: 20,
+        marginVertical: 20
     },
-    button: {
-        backgroundColor: "#4caf50",
-        paddingVertical: 12,
-        paddingHorizontal: 20,
-        borderRadius: 8,
-        marginHorizontal: 10,
-    },
-    buttonText: {
-        color: "#fff",
-        fontSize: 18,
-        fontWeight: "bold",
-    },
+  
     scoreContainer: {
-        marginTop: 20,
+        marginTop: 30,
         alignItems: "center",
     },
     scoreText: {
         color: "#fff",
-        fontSize: 16,
+        fontSize: 30,
         marginBottom: 10,
         textAlign: "center",
     },
+    image: {
+      width: 100,
+      height: 100,
+      paddingVertical: 12,
+      paddingHorizontal: 10,
+      marginHorizontal: 14,
+    }
 });
 
 export default App;
