@@ -1,13 +1,13 @@
 {
   "expo": {
-    "name": "RSP",
-    "slug": "RSP",
+    "name": "Rock Scissor Paper Game",
+    "slug": "rock-scissor-paper-game",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/react-icon.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -16,12 +16,24 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./assets/react-icon.png",
         "backgroundColor": "#ffffff"
       }
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/react.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "fb6323ad-ebf7-4238-bc59-cc57700282dd"
+      }
+    },
+    "owner": "dhanu18",
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/fb6323ad-ebf7-4238-bc59-cc57700282dd"
     }
   }
 }
